@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Running Status</title>
+	<style>
+    div.sidenav {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: white;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+    
+    div.sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: black;
+      display: block;
+      transition: 0.3s;
+    }
+    
+    div.sidenav a:hover {
+      color: green;
+    }
+    
+    div.sidenav .closebtn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+    #main {
+      margin-left: 20px;
+      padding: 15px;
+    }  
+    div.z{border:5px outset light grey;
+        border-radius:8px;
+        width:550px;
+        height:190px;
+        padding:8px;
+         margin-top: 20px;
+      margin-bottom: 00px;
+      margin-right: 300px;
+      margin-left: 400px;
+      background-color:white;
+      text-align:left;}
+    input[type=submit] {
+      width: 100%;
+      background-color:dodgerblue;
+      color: white;
+      padding: 12px 20px;
+      margin: 8px 10px 0px 0px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      size:90%;
+    }
+    input[type=text], select {
+      width: 100%;
+      padding: 12px 20px;
+      margin: 00px 0px 00px ;
+      margin-top:-10px;
+      display: inline-block;
+      border: 1px solid blue;
+      border-radius: 8px;
+      box-sizing: border-box;
+    }
+    h4 {
+                display: flex;
+                flex-direction: row;
+                color:black;
+                margin-left:26%;
+                width:10px;
+                
+            }  
+            h4:before,
+            h4:after {
+                content: "";
+                flex: 1 1;
+                border-bottom: 2px solid black;
+                margin-left:auto}
+    div.y{border:5px outset light grey;
+        border-radius:8px;
+        width:550px;
+        height:270px;
+        padding:8px;
+         margin-top: 30px;
+      margin-bottom: 00px;
+      margin-right: 00px;
+      margin-left: 400px;
+      background-color:white;
+      text-align:left;}
+    body { background-image: url("bg2.jpg");
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100%;}
+      </style>
+</head>
+
+<body>
+	<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="Ticket Booking.html" target="_blank">HOME</a>
+    <a href="pnr.html" target="_blank">PNR STATUS</a>
+    <a href="runningstatus.html">TRAIN STATUS</a>
+    <a href="refundrules.html" target="_blank">REFUND RULES</a>
+    <a href="/Station_code.pdf" target="_blank">TRAIN CODES</a>
+    <a href="/about us.html" target="_blank">ABOUT US</a>
+    </div>
+    <div id="main">
+      <span style="font-size:50px;cursor:pointer;color:black" onclick="openNav()">&#9776; </span>
+    </div>
+    <script>
+      function openNav() {
+        document.getElementById("mySidenav").style.width = "300px";
+        document.getElementById("main").style.marginLeft = "300px";
+      }
+      
+      function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft= "0";
+      }
+      </script>
+<div class="z"><p><strong>Search by train</p></strong>
+<hr style="background-color:dodgerblue">
+<form>
+<label for="runningstatus"><p style=font-family:TimesNewRoman>RUNNING TRAIN STATUS:</p></label>
+    <input type="text" id="runningstatus" name="RUNNING TRAIN STATUS" placeholder="Train.no" required><br>
+    <input type="submit" value="GET RUNNING TRAIN STATUS"></form>
+   
+</div>
+<h4 style="width:50%">or</h4>
+<div class="y">
+<p><strong>Search by station</p></strong>
+<hr style="background-color:dodgerblue">
+<form action=link>
+<label for="runningstatus"><p style=font-family:TimesNewRoman>FROM:</p></label>
+    <input type="text" id="from_station" name="fromstation" placeholder="Station" required>
+<p style=font-family:Times New Roman>TO:</p>
+    <input type="text" id="to_station" name="tostation" placeholder="Station" required><br>
+    <!-- <button onclick="run()">GET RUNNING TRAIN STATUS</button> -->
+    <input type="submit" value="GET RUNNING TRAIN STATUS" onclick="setitem()">
+  </form>
+</div>
+</div>
+<script>
+  function setitem(){
+    let a=document.getElementById("from_station").value;
+    let b=document.getElementById("to_station").value;
+    var placelink="https://www.makemytrip.com/railways/listing/?classCode=&className=All%20Classes&destCity=&destStn="+b+"&srcCity=&srcStn="+a
+    window.open(placelink)
+}
+
+</script>
+</body>
+
+</html>

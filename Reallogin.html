@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>E-TRAIN RESERVATION</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/Logos/logo.ico" type="image">
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body background="Images\bg-01.jpg">
+    <center>
+        <div id="login">
+
+            <h2 style="font-family: Montserrat">Sign In</h2><br>
+
+            <form>
+
+                <p>Username</p>
+                <input type="text" id="email"><br>
+                <p>Password</p>
+                <input type="password" id="pswd"><br><br><br>
+                <a href="/Ticket Booking.html" onclick="return validate()" id="button">Sign In</a>
+                <a href="/Register.html" id="button">Register</a>
+                <p style="text-align: center; margin: 30px; font-weight: bold;">OR</p>
+
+                <div id="logos">
+
+                    <a href="/Ticket Booking.html" class="fb">                
+                <img src="/fblogo.png" height="50px" width="50px">
+                <span class="text">Facebook</span></a>
+
+                    <a href="/Ticket Booking.html" class="google">                
+                <img src="https://cdn2.hubspot.net/hubfs/53/image8-2.jpg" height="50px" width="50px">
+                <span class="text">Google</span></a>
+                
+
+                </div>
+
+            </form>
+            
+        </div>
+    </center>   
+    
+    
+    <script>
+          function setitem(){
+    let a=document.getElementById("from_station").value;
+    let b=document.getElementById("to_station").value;
+    var placelink="https://www.makemytrip.com/railways/listing/?classCode=&className=All%20Classes&destCity="+b+"&destStn=ERS&srcCity="+a+"&srcStn=HX"
+    // "https://www.makemytrip.com"+"/"+"railways"+"/"+a+"-"+b+"-"+"train"+"-"+"tickets"+"."+"html"
+    window.open(placelink)
+}
+        function validate() {
+            email = document.getElementById('email').value;
+            pswd = document.getElementById('pswd').value;
+            validEmail = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+
+            if (email == '') {
+                alert('Please enter your email.');
+                return false;
+            } else if (validEmail.test(email) == false) {
+                alert('Please enter your email correctly');
+                return false;
+            } else if (pswd == '') {
+                alert('Please enter password.');
+                return false;
+            } else
+                return true;
+        }
+    </script>
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script> -->
+</body>
+
+</html>
